@@ -38,85 +38,81 @@
 
     <!-- Create Flow State -->
     <div id="createContent" class="content-area">
-        <div class="templates-container">
-            <!-- Empty Board Option -->
-            <div class="template-option empty-board">
-                <div class="option-header">
-                    <span class="icon">⬜</span>
-                    <span class="label">Empty board</span>
-                </div>
-            </div>
-
-            <!-- Template Stacks -->
-            <div class="template-stack" data-stack="planning">
-                <div class="stack-header">
-                    <div class="stack-icon">📊</div>
-                    <div class="stack-info">
-                        <div class="stack-title">Planning & Strategy</div>
-                        <div class="stack-count">6 templates</div>
+        <div class="card-stacks-grid">
+            <!-- Empty Board -->
+            <div class="stack-card empty" data-type="empty">
+                <div class="stack-visual single">
+                    <div class="visual-card main">
+                        <div class="card-icon">⬜</div>
+                        <div class="card-label">Empty Board</div>
                     </div>
                 </div>
-                <div class="stack-expanded">
-                    <div class="template-card" data-template="roadmap">Roadmap</div>
-                    <div class="template-card" data-template="sprint">Sprint Planning</div>
-                    <div class="template-card" data-template="okr">OKRs</div>
-                    <div class="template-card" data-template="strategy">Strategy Doc</div>
-                    <div class="template-card" data-template="quarterly">Quarterly Review</div>
-                    <div class="template-card" data-template="gantt">Gantt Chart</div>
-                </div>
             </div>
 
-            <div class="template-stack" data-stack="design">
-                <div class="stack-header">
-                    <div class="stack-icon">🎨</div>
-                    <div class="stack-info">
-                        <div class="stack-title">Design & Wireframes</div>
-                        <div class="stack-count">4 templates</div>
+            <!-- Planning Stack -->
+            <div class="stack-card" data-type="planning">
+                <div class="stack-visual">
+                    <div class="visual-card layer-3"></div>
+                    <div class="visual-card layer-2"></div>
+                    <div class="visual-card main">
+                        <div class="card-icon">📊</div>
+                        <div class="card-label">Planning</div>
+                        <div class="card-count">6 templates</div>
                     </div>
                 </div>
-                <div class="stack-expanded">
-                    <div class="template-card" data-template="wireframe">Wireframe</div>
-                    <div class="template-card" data-template="userflow">User Flow</div>
-                    <div class="template-card" data-template="moodboard">Mood Board</div>
-                    <div class="template-card" data-template="prototype">Prototype</div>
-                </div>
             </div>
 
-            <div class="template-stack" data-stack="meeting">
-                <div class="stack-header">
-                    <div class="stack-icon">💬</div>
-                    <div class="stack-info">
-                        <div class="stack-title">Meetings & Workshops</div>
-                        <div class="stack-count">5 templates</div>
+            <!-- Design Stack -->
+            <div class="stack-card" data-type="design">
+                <div class="stack-visual">
+                    <div class="visual-card layer-3"></div>
+                    <div class="visual-card layer-2"></div>
+                    <div class="visual-card main">
+                        <div class="card-icon">🎨</div>
+                        <div class="card-label">Design</div>
+                        <div class="card-count">4 templates</div>
                     </div>
                 </div>
-                <div class="stack-expanded">
-                    <div class="template-card" data-template="brainstorm">Brainstorming</div>
-                    <div class="template-card" data-template="retro">Retrospective</div>
-                    <div class="template-card" data-template="standup">Daily Standup</div>
-                    <div class="template-card" data-template="workshop">Workshop</div>
-                    <div class="template-card" data-template="1on1">1-on-1</div>
-                </div>
             </div>
 
-            <div class="template-stack" data-stack="research">
-                <div class="stack-header">
-                    <div class="stack-icon">🔍</div>
-                    <div class="stack-info">
-                        <div class="stack-title">Research & Analysis</div>
-                        <div class="stack-count">3 templates</div>
+            <!-- Meetings Stack -->
+            <div class="stack-card" data-type="meetings">
+                <div class="stack-visual">
+                    <div class="visual-card layer-3"></div>
+                    <div class="visual-card layer-2"></div>
+                    <div class="visual-card main">
+                        <div class="card-icon">💬</div>
+                        <div class="card-label">Meetings</div>
+                        <div class="card-count">5 templates</div>
                     </div>
                 </div>
-                <div class="stack-expanded">
-                    <div class="template-card" data-template="userresearch">User Research</div>
-                    <div class="template-card" data-template="competitive">Competitive Analysis</div>
-                    <div class="template-card" data-template="swot">SWOT Analysis</div>
+            </div>
+
+            <!-- Research Stack -->
+            <div class="stack-card" data-type="research">
+                <div class="stack-visual">
+                    <div class="visual-card layer-3"></div>
+                    <div class="visual-card layer-2"></div>
+                    <div class="visual-card main">
+                        <div class="card-icon">🔍</div>
+                        <div class="card-label">Research</div>
+                        <div class="card-count">3 templates</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="selection-summary" id="selectionSummary">
-            <!-- Dynamic selection preview -->
+            <!-- Diagrams Stack -->
+            <div class="stack-card" data-type="diagrams">
+                <div class="stack-visual">
+                    <div class="visual-card layer-3"></div>
+                    <div class="visual-card layer-2"></div>
+                    <div class="visual-card main">
+                        <div class="card-icon">📐</div>
+                        <div class="card-label">Diagrams</div>
+                        <div class="card-count">7 templates</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

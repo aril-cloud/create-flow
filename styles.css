@@ -93,7 +93,7 @@ header {
 /* Content Areas */
 .content-area {
     padding: 100px 64px 120px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     opacity: 0;
     transform: translateY(20px);
@@ -175,170 +175,114 @@ h1 {
     border-color: #1a1a1a;
 }
 
-/* Create Flow Content */
-.templates-container {
+/* Create Flow - Card Stacks Grid */
+.card-stacks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stack Card Container */
+.stack-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.stack-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Visual Stack */
+.stack-visual {
+    position: relative;
+    width: 100%;
+    padding-top: 130%;
+    perspective: 1000px;
+}
+
+.stack-visual.single {
+    padding-top: 140%;
+}
+
+/* Individual Visual Cards in Stack */
+.visual-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.template-option.empty-board {
-    background: white;
-    border: 2px dashed #cbd5e0;
-    border-radius: 12px;
-    padding: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.template-option.empty-board:hover {
-    border-color: #1a1a1a;
-    background: #f8f9fa;
-}
-
-.option-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.icon {
-    font-size: 24px;
-}
-
-/* Template Stacks */
-.template-stack {
-    background: white;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.stack-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.stack-header:hover {
-    background: #f8f9fa;
-}
-
-.stack-icon {
-    font-size: 32px;
-    width: 48px;
-    height: 48px;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9fa;
-    border-radius: 8px;
-}
-
-.stack-info {
-    flex: 1;
-}
-
-.stack-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.stack-count {
-    font-size: 13px;
-    color: #8b8b8b;
-}
-
-.stack-expanded {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 24px;
-}
-
-.template-stack.expanded .stack-expanded {
-    max-height: 500px;
-    padding: 0 24px 20px;
-}
-
-.template-card {
-    background: #f8f9fa;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 14px;
-}
-
-.template-card:hover {
-    background: white;
-    border-color: #1a1a1a;
-    transform: translateX(4px);
-}
-
-.template-card.selected {
-    background: #1a1a1a;
-    color: white;
-    border-color: #1a1a1a;
-}
-
-/* Selection Summary */
-.selection-summary {
-    position: fixed;
-    top: 80px;
-    right: 32px;
-    background: white;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
-    padding: 16px 20px;
-    min-width: 200px;
+    padding: 24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
     transition: all 0.3s ease;
 }
 
-.selection-summary.visible {
+/* Layered stack effect */
+.visual-card.layer-3 {
+    transform: translateY(-12px) scale(0.92);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.visual-card.layer-2 {
+    transform: translateY(-6px) scale(0.96);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.visual-card.main {
+    transform: translateY(0) scale(1);
     opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
+    z-index: 3;
 }
 
-.selection-summary h3 {
-    font-size: 14px;
+.stack-card:hover .visual-card.layer-3 {
+    transform: translateY(-16px) scale(0.92);
+}
+
+.stack-card:hover .visual-card.layer-2 {
+    transform: translateY(-8px) scale(0.96);
+}
+
+.stack-card:hover .visual-card.main {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Empty board single card */
+.stack-card.empty .visual-card {
+    border: 2px dashed #cbd5e0;
+    background: #fafbfc;
+}
+
+.stack-card.empty:hover .visual-card {
+    border-color: #1a1a1a;
+    background: white;
+}
+
+/* Card Content */
+.visual-card .card-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.visual-card .card-label {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
     margin-bottom: 8px;
+}
+
+.visual-card .card-count {
+    font-size: 13px;
     color: #8b8b8b;
-}
-
-.selection-summary .selected-item {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.selection-summary button {
-    width: 100%;
-    background: #1a1a1a;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.selection-summary button:hover {
-    background: #333;
+    text-align: center;
 }
