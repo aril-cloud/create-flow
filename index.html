@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Flow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home State -->
+    <div id="homeContent" class="content-area active">
+        <h1>Hola, Kyra</h1>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <p>FirstFlex and PayGrid competing for the same capacity</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <p>Nathan flagged a risk in onboarding</p>
+            </div>
+            <div class="card highlight">
+                <div class="card-icon">🗺️</div>
+                <p>Marcus shared his Q2 roadmap Talktrack for sign-off</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚠️</div>
+                <p>Timeline conflict — PayGrid API and mobile release share engineering</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">What needs my attention</button>
+            <button class="tab">What's happening in my team</button>
+        </div>
+    </div>
+
+    <!-- Create Flow State -->
+    <div id="createContent" class="content-area">
+        <div class="templates-container">
+            <!-- Empty Board Option -->
+            <div class="template-option empty-board">
+                <div class="option-header">
+                    <span class="icon">⬜</span>
+                    <span class="label">Empty board</span>
+                </div>
+            </div>
+
+            <!-- Template Stacks -->
+            <div class="template-stack" data-stack="planning">
+                <div class="stack-header">
+                    <div class="stack-icon">📊</div>
+                    <div class="stack-info">
+                        <div class="stack-title">Planning & Strategy</div>
+                        <div class="stack-count">6 templates</div>
+                    </div>
+                </div>
+                <div class="stack-expanded">
+                    <div class="template-card" data-template="roadmap">Roadmap</div>
+                    <div class="template-card" data-template="sprint">Sprint Planning</div>
+                    <div class="template-card" data-template="okr">OKRs</div>
+                    <div class="template-card" data-template="strategy">Strategy Doc</div>
+                    <div class="template-card" data-template="quarterly">Quarterly Review</div>
+                    <div class="template-card" data-template="gantt">Gantt Chart</div>
+                </div>
+            </div>
+
+            <div class="template-stack" data-stack="design">
+                <div class="stack-header">
+                    <div class="stack-icon">🎨</div>
+                    <div class="stack-info">
+                        <div class="stack-title">Design & Wireframes</div>
+                        <div class="stack-count">4 templates</div>
+                    </div>
+                </div>
+                <div class="stack-expanded">
+                    <div class="template-card" data-template="wireframe">Wireframe</div>
+                    <div class="template-card" data-template="userflow">User Flow</div>
+                    <div class="template-card" data-template="moodboard">Mood Board</div>
+                    <div class="template-card" data-template="prototype">Prototype</div>
+                </div>
+            </div>
+
+            <div class="template-stack" data-stack="meeting">
+                <div class="stack-header">
+                    <div class="stack-icon">💬</div>
+                    <div class="stack-info">
+                        <div class="stack-title">Meetings & Workshops</div>
+                        <div class="stack-count">5 templates</div>
+                    </div>
+                </div>
+                <div class="stack-expanded">
+                    <div class="template-card" data-template="brainstorm">Brainstorming</div>
+                    <div class="template-card" data-template="retro">Retrospective</div>
+                    <div class="template-card" data-template="standup">Daily Standup</div>
+                    <div class="template-card" data-template="workshop">Workshop</div>
+                    <div class="template-card" data-template="1on1">1-on-1</div>
+                </div>
+            </div>
+
+            <div class="template-stack" data-stack="research">
+                <div class="stack-header">
+                    <div class="stack-icon">🔍</div>
+                    <div class="stack-info">
+                        <div class="stack-title">Research & Analysis</div>
+                        <div class="stack-count">3 templates</div>
+                    </div>
+                </div>
+                <div class="stack-expanded">
+                    <div class="template-card" data-template="userresearch">User Research</div>
+                    <div class="template-card" data-template="competitive">Competitive Analysis</div>
+                    <div class="template-card" data-template="swot">SWOT Analysis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="selection-summary" id="selectionSummary">
+            <!-- Dynamic selection preview -->
+        </div>
+    </div>
+
+    <!-- Persistent Elements -->
+    <header>
+        <div class="logo">miro</div>
+        <button id="createBtn" class="create-btn">+ Create</button>
+    </header>
+
+    <div class="prompt-bar">
+        <input type="text" id="promptInput" placeholder="What shall we do next?">
+        <button class="voice-btn">🎤</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
